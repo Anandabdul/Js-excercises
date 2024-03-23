@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average of number range</title>
+
+    <style>
+        .averageNumRange {
+            background-color: rgb(228, 228, 119);
+            height: 400px;
+            width: 250px;
+            padding-left: 10px;
+            margin: 5px;
+        }
+
+        .answerP {
+            background-color: white;
+            padding: 5px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .answerdiv {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="averageNumRange">
+        <h3>AVERAGE OF NUM RANGE</h3>
+        <p>From: <input type="text" id="fromId"></p>
+        <p>To: <input type="text" id="toId"></p>
+        <p><button onclick="findAnswer()">Find</button></p>
+        <div class="answerdiv">
+            ANSWER:
+            &nbsp; &nbsp; &nbsp;<p class="answerP" id="answerPId"></p>
+            &nbsp; &nbsp; &nbsp;<p class="answerP" id="answerExpandId"></p>
+        </div>
+    </div>
+
+    <script>
+        function findAnswer() {
+            let from = Number(document.getElementById("fromId").value);
+            let to = Number(document.getElementById("toId").value);
+            let sum = 0;
+            let count = 0;
+
+            for (let num = from; num <= to; num++) {
+                // result = result + num + "<br>";
+                sum += num;
+                count++;
+            }
+
+            let result = sum / count;
+
+            document.getElementById("answerPId").innerHTML = result;
+            document.getElementById("answerExpandId").innerHTML = `The sum of the range from (${from}) to (${to}) is (${sum}) and total count range is (${count}) this both values are divided to get the average of num range (${result}).`;
+
+        }
+    </script>
+</body>
+
+</html>

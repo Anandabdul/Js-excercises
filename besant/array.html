@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let Accessories = ["shoes", "belts", "Sun glasses", "belts", "Shirt", "Chain"];
+        // let result = '';
+        // console.log(Accessories.push("priya"));
+        // console.log(Accessories);
+
+        // console.log(Accessories.pop("priya"));
+        // console.log(Accessories);
+
+        // console.log(Accessories.indexOf("belts"));
+
+        // console.log(Accessories.lastIndexOf("Shirt"));
+
+        // console.log(Accessories.shift());
+
+        // console.log(Accessories.unshift("shoes"));
+
+        // console.log(Accessories.includes("belts"));
+
+        // console.log(Accessories.slice(2,6));
+
+        // console.log(Accessories);
+
+
+        function arrPush(Value) {
+            Accessories[Accessories.length]= Value;
+            console.log(Accessories.length);
+            console.log(Accessories);
+        }
+
+        // arrPush("Perfume");
+
+        function arrpop() {
+            for (i = 0; i <= Accessories.length; i++) {
+                if (i === Accessories.length) {
+                    Accessories.length -= 1;
+                }
+            }
+            console.log(Accessories.length);
+            console.log(Accessories);
+        }
+            
+        // arrpop();
+
+        function arrIndexOf(value) {
+            for (i = 0; i <= Accessories.length; i++) {
+                if (Accessories[i] == value) {
+                    console.log(i);
+                    break;
+                }
+            }
+            console.log(Accessories);
+        }
+
+        // arrIndexOf("Shirt");
+
+        function arrLastIndexOf(value) {
+            for (i = Accessories.length; i >= 0; i--) {
+                if (Accessories[i] == value) {
+                    console.log(i);
+                    break;
+                }
+            }
+            console.log(Accessories);
+        }
+
+        // arrLastIndexOf("belts");
+
+        function arrShift() {
+            for (let i = 0; i < Accessories.length - 1; i++) {
+                if (i === 0) {
+                    console.log(Accessories[0]);
+                }
+                Accessories[i] = Accessories[i + 1];
+            }
+            Accessories.length--;
+        }
+
+        // arrShift();
+
+        function arrUnShift(value) {
+            for (let i = 0; i <= Accessories.length; i++) {
+                if (i !== 0) {
+                    Accessories[i] += 1;
+                };
+            }
+            Accessories[0] = value;
+        }
+
+        arrUnShift("shall");
+
+        console.log(Accessories);
+    </script>
+</body>
+</html>

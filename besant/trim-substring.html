@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str = "  My name is anand i am a very good boy  ";
+    let big = '  plane jane  '
+
+    function strSubString(stri, start, finish) {
+      let strlen = stri.length - 1;
+      let result = '';
+      for (let index = 0; index < strlen; index++) {
+        if (index >= start && index < finish) {
+          result += stri[index];
+        }
+      }
+      console.log(result);
+    }
+
+    strSubString(str, 2, 15);
+
+    function strTrim(stri) {
+      let start = 0;
+      let finish = 0;
+      for (let index = 0; index < stri.length; index++) {
+
+        if (stri[index] != ' ') {
+          // result += stri[index];
+          start = index;
+          break;
+        }
+
+      }
+
+      for (let index1 = stri.length - 1; index1 > 0; index1--) {
+
+        if (stri[index1] != ' ') {
+          // result += stri[index1];
+          finish = index1;
+          break;
+        }
+
+      }
+
+      let strlen = stri.length - 1;
+      let result1 = '';
+      for (let index = 0; index < strlen; index++) {
+        if (index >= start && index <= finish) {
+          result1 += stri[index];
+        }
+      }
+      console.log(result1);
+      console.log(strlen);
+      console.log(start);
+      console.log(finish);
+    }
+
+    strTrim(str);
+  </script>
+</body>
+
+</html>

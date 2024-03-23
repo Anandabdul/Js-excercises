@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pattern array </title>
+
+  <style>
+    .pStyle {
+      line-height: 10px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <p class="pStyle" id="pPrint"></p>
+  <p class="pStyle" id="rPrint"></p>
+  <p class="pStyle" id="pPrintTwo"></p>
+  <p class="pStyle" id="rPrintTwo"></p>
+  <script>
+    function letterA() {
+      let num = 9;
+      let answer = '';
+      for (let row = 1; row <= num; row++) {
+
+        for (let col = 1; col <= num; col++) {
+
+          if (row == 1 || row == 2 || col == 1 ||
+            col == 2 || col == num - 1 || col == num ||
+            row == Math.ceil(num / 2) || row == (Math.floor(num / 2)) + 2) {
+            answer += '*';
+
+          } else {
+            answer += '&nbsp '
+          }
+        }
+        answer += '<br>';
+      }
+
+      document.getElementById('pPrint').innerHTML = answer;
+      document.getElementById('pPrintTwo').innerHTML = answer;
+    }
+
+    letterA()
+
+    function letterR() {
+      let num = 9;
+      let answer = '';
+      for (let row = 1; row <= num; row++) {
+        for (let col = 1; col <= num; col++) {
+
+          if (row == 1 || row == 2 || col == 1 ||
+            col == 2 ||
+            row == Math.ceil(num / 2) || row == (Math.floor(num / 2)) + 2) {
+            answer += '*';
+
+          } else if (col == num && row < (Math.ceil(num / 2))) {
+            answer += '*';
+          } else if (col == num - 1 && row < (Math.ceil(num / 2))) {
+            answer += '*';
+          } else if (row == (Math.floor(num / 2)) + 3 && col == Math.ceil(num / 2) || row == (Math.floor(num / 2)) + 3 && col == (Math.ceil(num / 2))+1) {
+            answer += '*';
+          } else if (col == num || col == num-1) {
+            
+            answer += '*';
+            
+            for (row = num; row >= ((Math.floor(num / 2)) + 3); row--) {
+              for (col1 = 1; col1 <= 3; col1++) {
+                answer += '*';
+              }
+              answer += '<br>';
+            }
+
+          }
+          
+          else {
+            answer += '&nbsp '
+          }
+        }
+        answer += '<br>';
+      }
+      document.getElementById('rPrint').innerHTML = answer;
+    }
+
+    letterR();
+
+  </script>
+</body>
+
+</html>

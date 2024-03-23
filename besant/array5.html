@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Accessories = ["shoes", "belts", "sun glasses", "belts", "shirt", "chain"];
+        let product = [70, 40, 20, 50, 30, 60];
+
+        function arrSort(array) {
+
+            let temp = 0;
+
+
+            for (let index = 0; index < array.length; index++) {
+
+                for (let index1 = index; index1 < array.length; index1++) {
+                    
+                    if (array[index] > array[index1]) {
+                        
+                        temp = array[index];
+                        array[index] = array[index1];
+                        array[index1] = temp;
+                    }
+                    
+                }
+                
+            }
+            console.log(array);
+
+        }
+
+        arrSort(Accessories);
+
+    </script>
+</body>
+
+</html>

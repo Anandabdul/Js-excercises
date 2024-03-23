@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pheonix Mall Parking Lot</title>
+
+  <style>
+    body {
+      font-family: antonio;
+      background-image: url(../assets/pngwing.com.png);
+      background-size: 700px;
+      background-position-y: -35px;
+    }
+    input {
+      font-family: antonio;
+    }
+    button {
+      font-family: antonio;
+      
+    }
+    select {
+      font-family: antonio;
+    }
+    .p1 {
+      display: inline-block;
+      text-align: center;
+      padding-top: 45px;
+      margin: 2px;
+      height: 70px;
+      width: 80px;
+      background-color: rgb(202, 202, 202);
+    }
+
+    .entry-button {
+      width: 80px;
+      height: 30px;
+    }
+    .parking {
+      padding: 5px;
+      display: inline-block;
+      background-color: rgb(71, 71, 71);
+    } 
+    .outer-div {
+      background-color: rgb(249, 252, 100);
+      min-width: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-style: solid;
+      border-color: rgb(245, 247, 180);
+      border-radius: 20px;
+      border-width: 5px;
+      box-shadow: 0px 0px 10px 10px rgba(248, 191, 68, 0.89) inset;
+    }
+  </style>
+</head>
+
+<body style="padding-top: 65px; display: flex; justify-content: center; background-color: rgb(252, 157, 188);">
+  <div class="outer-div">
+    <div>
+      <div style="display: flex; align-items: center;">
+        VEHICLE NO : &nbsp;<input style="height: 25px; margin-right: 5px;" type="text" placeholder="Enter your Vehicle No" id="vehicleNo">
+        <button class="entry-button" onclick="vehicleEntry()">Entry</button>
+      </div>
+      <br>
+    
+      <div style="display: flex; align-items: center; justify-content: center;">
+        <select name="list" style="width: 140px; margin-right: 5px; height: 25px;" id="dropDownSelect">
+          <option value="" id="baySelect">--select--</option>
+          <option value="" id="bay0List"></option>
+          <option value="" id="bay1List"></option>
+          <option value="" id="bay2List"></option>
+          <option value="" id="bay3List"></option>
+          <option value="" id="bay4List"></option>
+          <option value="" id="bay5List"></option>
+          <option value="" id="bay6List"></option>
+          <option value="" id="bay7List"></option>
+          <option value="" id="bay8List"></option>
+          <option value="" id="bay9List"></option>
+        </select>
+        <button style="margin-right: 5px; height: 25px;" onclick="vehicleSearch()">Search</button>
+        <button style="margin-right: 5px; height: 25px;" onclick="vehicleClear()">Clear</button>
+        <br>
+        <button style="margin-right: 5px; width: 40px; height: 25px;" onclick="vehicleExit()">Exit</button>
+      </div>
+    </div>
+    
+    <br>
+    <div class="parking">
+      <div style="margin-bottom: 5px;">
+        <div class="p1" id="bay0">0</div>
+        <div class="p1" id="bay1">1</div>
+        <div class="p1" id="bay2">2</div>
+        <div class="p1" id="bay3">3</div>
+        <div class="p1" id="bay4">4</div>
+      </div>
+  
+      <div>
+        <div class="p1" id="bay9">9</div>
+        <div class="p1" id="bay8">8</div>
+        <div class="p1" id="bay7">7</div>
+        <div class="p1" id="bay6">6</div>
+        <div class="p1" id="bay5">5</div>
+  
+      </div>
+    </div>
+  </div>
+  
+
+  <script>
+    var parkingArray = [[0, ""], [1, ""], [2, ""], [3, ""], [4, ""], [5, ""], [6, ""], [7, ""], [8, ""], [9, ""]];
+    function vehicleEntry() {
+      let vehNo = document.getElementById('vehicleNo').value;
+
+      // console.log(vehNo);
+      let parArrLen = parkingArray.length;
+      for (let index = 0; index < parArrLen; index++) {
+
+        if (parkingArray[index][1] == '') {
+
+          parkingArray[index][1] = vehNo;
+          document.getElementById(`bay${index}`).style.backgroundColor = "rgb(83, 209, 121)";
+          document.getElementById(`bay${index}List`).value = vehNo;
+          document.getElementById(`bay${index}List`).innerHTML = vehNo;
+          break;
+        }
+
+        for (let check = 0; check < 10; check++) {
+          if (vehNo == parkingArray[check][1]) {
+            alert('Your vehicle num Wrong, It seems \n Check it once more.');
+            parkingArray[index][1] = '';
+          }
+        }
+
+        if (index === 9) {
+          alert('The parking lot is full! \n You better Search for a Another Parking Lot somewhere.')
+        }
+      }
+      console.log(parkingArray);
+    }
+
+    function vehicleExit() {
+      let vehEx = document.getElementById('dropDownSelect').value;
+
+      for (let index = 0; index < 10; index++) {
+
+        if (parkingArray[index][1] == vehEx) {
+          parkingArray[index][1] = "";
+          document.getElementById(`bay${index}`).style.backgroundColor = "rgb(202, 202, 202)";
+          document.getElementById(`bay${index}List`).value = '';
+          document.getElementById(`bay${index}List`).innerHTML = '';
+        }
+      }
+      console.log(parkingArray);
+      // console.log(vehEx);
+    }
+
+    function vehicleSearch() {
+      let vehSr = document.getElementById('dropDownSelect').value;
+
+      for (let index = 0; index < 10; index++) {
+
+        if (parkingArray[index][1] == vehSr) {
+          document.getElementById(`bay${index}`).style.backgroundColor = "rgb(255, 212, 94)";
+          break;
+        }
+      }
+    }
+
+    function vehicleClear() {
+
+      var dropdown = document.getElementById('dropDownSelect');
+      dropdown.selectedIndex = 0;
+    }
+
+    
+  </script>
+
+</body>
+
+</html>

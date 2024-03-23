@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    let str = "My name is anand i am a very good boy";
+    let big = 'planejane';
+
+    // console.log(str.repeat(3));
+    // console.log(str.padStart(45,'*'));
+    // console.log(str.padEnd(45,'-'));
+    // console.log(str.startsWith('My'));
+    // console.log(str.endsWith(' '));
+
+    function strRepeat(value, times) {
+      let result = '';
+
+      for (let index = 0; index < times; index++) {
+        result += value;
+      }
+      console.log(result);
+    }
+    strRepeat(str, 3);
+
+    function strPadStart(stri, value, symbol) {
+      let result = '';
+      let sum1 = stri.length - 1;
+      let suming = (value - 1) - sum1;
+      // console.log(sum1);
+      // console.log(suming);
+
+      for (let index = 0; index < suming; index++) {
+        result += symbol;
+      }
+      result += stri;
+
+      console.log(result);
+    }
+
+    strPadStart(str, 45, '*');
+
+    function strPadEnd(stri, value, symbol) {
+      let result = '';
+      let sum1 = stri.length - 1;
+      let suming = (value - 1) - sum1;
+      // console.log(sum1);
+      // console.log(suming);
+
+      result += stri;
+      for (let index = 0; index < suming; index++) {
+        result += symbol;
+      }
+
+      console.log(result);
+    }
+
+    strPadEnd(str, 45, '-');
+
+    function strStartsWith (stri, value) {
+      let result = '';
+      let valLen = value.length;
+      let confirm = '';
+
+      // console.log(valLen);
+      for (let index = 0; index < valLen; index++) {
+        confirm += stri[index];
+      }
+      
+      if (confirm === value) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+    }
+
+    strStartsWith (str, 'My');
+
+    function strEndsWith (stri, value) {
+      let result = '';
+      let valLen = value.length;
+      let strLen = stri.length;
+      let summing = strLen - valLen;
+      let confirm = '';
+
+      // console.log(valLen);
+      // console.log(strLen);
+
+      for (let index = 0; index < valLen; index++) {
+        confirm += stri[summing + index];
+      }
+
+      // console.log(summing);
+      // console.log(confirm);
+      
+      if (confirm === value) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+    }
+
+    strEndsWith(str, 'boy');
+  </script>
+</body>
+</html>

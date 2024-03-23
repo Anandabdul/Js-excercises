@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill join toString concat</title>
+</head>
+<body>
+    <script>
+        let Accessories = ["shoes", "belts", "Sun glasses", "belts", "Shirt", "Chain"];
+        let veggies = ['carrot', 'beetroot', 'potato', 'brinjal'];
+
+        // console.log(Accessories.fill('none', 2, 4));
+        // console.log(Accessories.join('/'));
+        // console.log(Accessories.toString());
+        // console.log(Accessories.concat(veggies));
+
+        function arrFill(value, start, finish) {
+            for (let index = 0; index <= Accessories.length; index++) {
+                if (index >= start && index < finish) {
+                    Accessories[index] = value;
+                }
+            }
+            console.log(Accessories);
+        }
+
+        arrFill('Empty', 2, 5);
+
+        function arrJoin(separator) {
+            let result = '';
+            for (let index = 0; index <= Accessories.length - 1; index++) {
+                result += Accessories[index];
+                if (index < Accessories.length - 1) {
+                    result += separator;
+                }
+            }
+            console.log(result);
+        }
+
+        arrJoin('/ ');
+
+        function arrToString() {
+            let result = '';
+            for (let index = 0; index <= Accessories.length - 1; index++) {
+                result += Accessories[index];
+                if (index < Accessories.length - 1) {
+                    result += ',';
+                }
+            }
+            console.log(result);
+        }
+
+        arrToString();
+
+        function arrConcat () {
+            let arrResult = [];
+            let len = Accessories.length;
+            for (let index = 0; index <= len - 1; index++) {
+                arrResult[index] = Accessories[index];
+            }
+
+            for (let index = 0; index < veggies.length; index++) {
+                    arrResult[len + index] = veggies[index];
+            }
+            console.log(arrResult);
+        }
+
+        arrConcat();
+    </script>
+</body>
+</html>

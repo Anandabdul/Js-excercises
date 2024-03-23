@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="line-height: 10px;" id="printP"></p>
+
+    <script>
+        function boxxy() {
+            let answer ='';
+            let sample =6;
+
+            for (let row = 1; row <= sample; row++) {
+
+                for (let col = 1; col <= sample; col++) {
+                    
+                    if (row == sample || row == 1 || col == 1 || col == sample) {
+                        answer += '*';
+                    }
+
+                    else {
+                        answer += '&nbsp ';
+                    }
+                } 
+                answer += '<br>';
+            }
+            document.getElementById('printP').innerHTML = answer;
+        }
+        
+        boxxy()
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd or Even</title>
+    <style>
+        .averageNumRange {
+            background-color: rgb(162, 210, 233);
+            height: 400px;
+            width: 250px;
+            padding-left: 10px;
+            margin: 5px;
+        }
+
+        .answerP {
+            background-color: white;
+            padding: 5px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .answerdiv {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="averageNumRange">
+        <h3>reverse range</h3>
+        <p>From: <input type="text" id="fromId"></p>
+        <p>To: <input type="text" id="toId"></p>
+        <p><button onclick="findAnswer()">Find</button></p>
+        <div class="answerdiv">
+            ANSWER:
+            &nbsp; &nbsp; &nbsp;<p class="answerP" id="answerPId"></p>
+        </div>
+    </div>
+
+    <script>
+        function findAnswer() {
+            let from = Number(document.getElementById("fromId").value);
+            let to = Number(document.getElementById("toId").value);
+            let inc = "";
+            let dec = "";
+            for (let num = from; num <= to; num++) {
+                    
+                    inc = inc + num;
+
+                for (let sum = to; sum >= from; sum--) {
+                    
+                    dec = dec + sum;
+                }
+            }
+            let result = inc + '<br>' + dec;
+
+            document.getElementById("answerPId").innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

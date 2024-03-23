@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let Accessories = ["shoes", "belts", "sun glasses", "belts", "shirt", "chain"];
+        let product = [70,40,20,50,30,60];
+
+        function arrSort(array){
+            
+            let temp = array[0];
+            let newArr = [];
+
+            for (let index = 0; index < array.length; index++) {
+
+                if (temp > array[index]) {
+                    temp = array[index]
+                } else {
+                    temp = temp
+                }
+                
+            }
+
+            for (let index = 0; index < array.length; index++) {
+                
+                if (temp == array[index]) {
+                    delete array[index];
+                }
+            }
+            
+            for (let jndex = 0; jndex < array.length; jndex++) {
+                newArr[jndex] = temp;
+                break;
+            }
+            temp = array[1];
+            //------------------------------
+
+            
+            for (let index = 0; index < array.length; index++) {
+
+                if (temp > array[index]) {
+                    temp = array[index]
+                } else {
+                    temp = temp
+                }
+                
+            }
+
+            for (let index = 0; index < array.length; index++) {
+                
+                if (temp == array[index]) {
+                    delete array[index];
+                }
+            }
+            
+            for (let jndex = 1; jndex < array.length; jndex++) {
+                newArr[jndex] = temp;
+                break;
+            }
+            temp = array[3];
+            //------------------------------
+
+            
+            for (let index = 0; index < array.length; index++) {
+
+                if (temp > array[index]) {
+                    temp = array[index]
+                } else {
+                    temp = temp
+                }
+                
+            }
+
+            for (let index = 0; index < array.length; index++) {
+                
+                if (temp == array[index]) {
+                    delete array[index];
+                }
+            }
+            
+            for (let jndex = 2; jndex < array.length; jndex++) {
+                newArr[jndex] = temp;
+                break;
+            }
+            
+            temp = array[3];
+            //------------------------------
+
+            
+            for (let index = 0; index < array.length; index++) {
+
+                if (temp > array[index]) {
+                    temp = array[index]
+                } else {
+                    temp = temp
+                }
+                
+            }
+
+            for (let index = 0; index < array.length; index++) {
+                
+                if (temp == array[index]) {
+                    delete array[index];
+                }
+            }
+            
+            for (let jndex = 3; jndex < array.length; jndex++) {
+                newArr[jndex] = temp;
+                break;
+            }
+
+            
+            temp = array[5];
+            //------------------------------
+
+            
+            for (let index = 0; index < array.length; index++) {
+
+                if (temp > array[index]) {
+                    temp = array[index]
+                } else {
+                    temp = temp
+                }
+                
+            }
+
+            for (let index = 0; index < array.length; index++) {
+                
+                if (temp == array[index]) {
+                    delete array[index];
+                }
+            }
+            
+            for (let jndex = 4; jndex < array.length; jndex++) {
+                newArr[jndex] = temp;
+                break;
+            }
+
+            
+            temp = array[0];
+            //------------------------------
+
+            
+            for (let index = 0; index < array.length; index++) {
+
+                if (temp > array[index]) {
+                    temp = array[index]
+                } else {
+                    temp = temp
+                }
+                
+            }
+
+            for (let index = 0; index < array.length; index++) {
+                
+                if (temp == array[index]) {
+                    delete array[index];
+                }
+            }
+            
+            for (let jndex = 5; jndex < array.length; jndex++) {
+                newArr[jndex] = temp;
+                break;
+            }
+            temp = 0;
+            console.log(temp);
+            console.log(newArr);
+            console.log(array);
+
+        }
+
+        arrSort(product);
+
+        // function arrReverse(arr) {
+        //     let newArr = [];
+        //     for (let index = 0; index < arr.length; index++) {
+        //         newArr[index] = arr[arr.length - index - 1];
+        //     }
+        //     console.log(newArr);
+        // }
+
+        // arrReverse(product);
+
+    </script>
+</body>
+</html>

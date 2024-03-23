@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+
+  <script defer src="../bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container d-flex align-items-center justify-content-center mt-4">
+    <input id="empId" class="me-4" type="text" placeholder="EmployeeId">
+    <input id="empName" class="me-4" type="text" placeholder="Emp name">
+    <input id="empAge" class="me-4" type="number" placeholder="Emp age">
+    <input id="empEmail" class="me-4" type="email" placeholder="Emp email">
+    <button class="btn btn-success" onclick="addEmployee()">Add Employee</button>
+  </div>
+
+  <script>
+
+    function addEmployee() {
+      let employeeId = document.getElementById('empId');
+      let employeeName = document.getElementById('empName');
+      let employeeAge = document.getElementById('empAge');
+      let employeeEmail = document.getElementById('empEmail');
+
+      let account = {
+        'empid': employeeId.value,
+        'empname': employeeName.value,
+        'empage': employeeAge.value,
+        'empemail': employeeEmail.value
+      }
+
+      fetch("https://retoolapi.dev/hQ8QI0/EmployeeDetails",{
+        "method":"POST",
+        "body":JSON.stringify(account),
+        "headers":{"content-type":"application/json;charset=utf-8"}
+      })
+      .then((Response)=>{
+        if (Response && Response.ok) {
+          console.log(Response.json);
+          return Response.json();
+        }
+      })
+      .then((data)=> {console.log(data);
+        alert('account added: '+ data.id);
+      })
+    }
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+

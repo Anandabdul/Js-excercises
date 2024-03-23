@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calcdiv {
+            background-color: lightpink;
+            padding: 10px;
+            width: 170px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="calcdiv">
+        <h3>Simple Calculator</h3>
+        <P>Num 1: <input type="text" id="numone"></P>
+        <p>Num 2: <input type="text" id="numtwo"></p>
+        <p>Result: <input type="number" name="" id="result"></p>
+
+        <button type="button" onclick="addition()">Add</button>
+        <button type="button" onclick="subtraction()">Sub</button>
+        <button type="button" onclick="multiplication()">Mul</button>
+        <button type="button" onclick="division()">Div</button>
+    </div>
+
+    <script>
+        function addition(){
+            let num1 = Number(document.getElementById("numone").value);
+            let num2 = Number(document.getElementById("numtwo").value);
+            let addresult = num1 + num2;
+            document.getElementById("result").value = addresult;
+        }
+
+        function subtraction(){
+            let num1 = Number(document.getElementById("numone").value);
+            let num2 = Number(document.getElementById("numtwo").value);
+            let subresult = num1 - num2;
+            document.getElementById("result").value = subresult;
+        }
+
+        function multiplication(){
+            let num1 = Number(document.getElementById("numone").value);
+            let num2 = Number(document.getElementById("numtwo").value);
+            let mulresult = num1 * num2;
+            document.getElementById("result").value = mulresult;
+        }
+
+        function division(){
+            let num1 = Number(document.getElementById("numone").value);
+            let num2 = Number(document.getElementById("numtwo").value);
+            let divresult = num1 / num2;
+            document.getElementById("result").value = divresult;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .outerdiv {
+            background-color: rgb(236, 164, 188);
+            width: 200px;
+            height: 400px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outerdiv">
+        
+    <p>How many times: <input type="text" id="timesId"></p>
+    <p>What symbol?: <input type="text" id="symbolId"></p>
+    <button type="button" id="goOnId" onclick="goOn()">GO ON</button>
+    <p class="answer" id="pPrint"></p>
+
+    </div>
+
+    <script>
+        function goOn() {            
+        let symbol = String(document.getElementById("symbolId").value);
+        let times = Number(document.getElementById("timesId").value);
+        let answer = "";
+
+            for (let alpha = 1; alpha <= times; alpha++) {
+                // let row = "";
+                
+                for(let beta = 1; beta <= alpha; beta++) {
+                    
+                    answer += symbol;
+                }
+                answer += '<br>';
+            }
+
+            document.getElementById('pPrint').innerHTML = answer;
+        }
+        
+    </script>
+</body>
+</html>

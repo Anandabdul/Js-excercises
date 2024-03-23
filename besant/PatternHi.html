@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            line-height: 10px;
+            display: inline-block;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        Yevlo Periya H venum: <input type="text" id="inputId"><br>
+        <button type="button" onclick="patternH()">View</button>
+    </div>
+
+    <p id="printH"></p>
+    <p id="printI"></p>
+    <script>
+
+        function patternH() {
+            let input = Number(document.getElementById('inputId').value);
+            let answerH = '';
+            let answerI = '';
+            for (let row = 1; row <= input; row++) {
+                
+                for( let col = 1; col <= input; col++) {
+
+                    let job = Math.ceil(input / 2)
+                    if (row == job || col == 1 || col == input) {
+                        answerH += '*';
+                    } else {
+                        answerH += '&nbsp '
+                    }
+                }
+                answerH += '<br>';
+            }
+
+            for (let row = 1; row <= input; row++) {
+                answerI += '*' + '<br>';
+            }
+            document.getElementById('printH').innerHTML = answerH;
+            document.getElementById('printI').innerHTML = answerI;
+        }
+
+        patternH()
+    </script>
+</body>
+
+</html>

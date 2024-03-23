@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .pStyle {
+      line-height: 10px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="pStyle" id="pPrint"></p>
+  <p class="pStyle" id="pPrintNOne"></p>
+  <p class="pStyle" id="pPrintTwo"></p>
+  <p class="pStyle" id="pPrintNTwo"></p>
+
+
+  <script>
+    function letterA() {
+      let num = 9;
+      let answer = '';
+      for (let row = 1; row <= num; row++) {
+
+        for (let col = 1; col <= num; col++) {
+
+          if (row == 1 || row == 2 || col == 1 || 
+          col == 2 || col == num-1 || col == num ||
+          row == Math.ceil(num/2) || row == (Math.floor(num/2))+2) {
+            answer += '*';
+
+          } else {
+            answer += '&nbsp '
+          }
+        }
+        answer += '<br>';
+      }
+
+      document.getElementById('pPrint').innerHTML = answer;
+      document.getElementById('pPrintTwo').innerHTML = answer;
+    }
+
+    letterA()
+
+    function letterN() {
+      let answer = '';
+      for (let row = 1; row <= 2; row++) {
+
+        for (let col = 1; col <= 10; col++) {
+          if (col === 6 || col === 7) {
+            answer += '&nbsp ';
+          } else {
+            answer += '*';
+          }
+        }
+
+        answer += '<br>';
+
+      }
+
+
+      for (let row = 1; row <= 1; row++) {
+
+        for (let col = 1; col <= 10; col++) {
+          if (col === 7) {
+            answer += '&nbsp ';
+          } else {
+            answer += '*';
+          }
+        }
+
+        answer += '<br>';
+
+      }
+
+
+      for (let row = 1; row <= 3; row++) {
+
+        for (let col = 1; col <= 10; col++) {
+          if (col === 4 || col === 7) {
+            answer += '&nbsp ';
+          } else {
+            answer += '*';
+          }
+        }
+
+        answer += '<br>';
+
+      }
+
+
+      for (let row = 1; row <= 1; row++) {
+
+        for (let col = 1; col <= 10; col++) {
+          if (col === 4) {
+            answer += '&nbsp ';
+          } else {
+            answer += '*';
+          }
+        }
+
+        answer += '<br>';
+
+      }
+
+      for (let row = 1; row <= 2; row++) {
+
+        for (let col = 1; col <= 10; col++) {
+          if (col === 4 || col === 5) {
+            answer += '&nbsp ';
+          } else {
+            answer += '*';
+          }
+        }
+
+        answer += '<br>';
+
+      }
+      document.getElementById('pPrintNOne').innerHTML = answer;
+      document.getElementById('pPrintNTwo').innerHTML = answer;
+    }
+
+    letterN()
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd or Even</title>
+    <style>
+        .averageNumRange {
+            background-color: rgb(162, 210, 233);
+            height: 400px;
+            width: 250px;
+            padding-left: 10px;
+            margin: 5px;
+        }
+
+        .answerP {
+            background-color: white;
+            padding: 5px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .answerdiv {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="averageNumRange">
+        <h3>Fibonacci Series</h3>
+        <p>Until: <input type="text" id="untilId"></p>
+        <p><button onclick="findAnswer()">Find</button></p>
+        <div class="answerdiv">
+            ANSWER:
+            &nbsp; &nbsp; &nbsp;<p class="answerP" id="answerPId"></p>
+        </div>
+    </div>
+
+    <script>
+        function findAnswer() {
+            let a = 0;
+            let b = 1;
+            let until = Number(document.getElementById("untilId").value);
+            let result = 0;
+            for (let num = 2; num <= until; num++) {
+                result = a + b;
+                result = b + num;
+                result = result + num ;
+            }
+
+            document.getElementById("answerPId").innerHTML = result;
+
+        }
+    </script>
+</body>
+
+</html>

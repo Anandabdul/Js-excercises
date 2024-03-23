@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Give any number: <input type="text" id="inputid"></p>
+    <button onclick="oddoreven()">result</button>
+    <p style="background-color: yellow;" id ='answerid'></p>
+    <script>
+        function oddoreven() {
+        let num = document.getElementById('inputid').value;
+        let answer = '';
+
+        if (num % 2 == 0) {
+            answer = "even number";
+        } else if (num % 2 != 0) {
+            answer = 'odd number';
+        }
+
+        document.getElementById('answerid').innerHTML=answer;
+    }
+
+    </script>
+</body>
+</html>
