@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cart quantity</title>
+</head>
+<body>
+    <p>Cart Quantity</p>
+
+    <button onclick="
+        console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Show Quantity</button>
+
+    <button onclick="
+        updatedCartQualitySub(3);
+    ">-3</button>
+
+    <button onclick="
+        updatedCartQualitySub(2);
+    ">-2</button>
+
+    <button onclick="
+        updatedCartQualitySub(1);
+    ">Remove from cart</button>
+
+    <button onclick="
+        updatedCartQuality(1);
+    ">Add to Cart</button>
+    
+    <button onclick="
+        updatedCartQuality(2);
+    ">+2</button>
+
+    <button onclick="
+        updatedCartQuality(3);
+    ">+3</button>
+
+    <button onclick="
+        updatedCartQuality(4);
+    ">+4</button>
+
+    <button onclick="
+        updatedCartQuality(5);
+    ">+5</button>
+
+    <button onclick="
+        cartQuantity = cartQuantity - cartQuantity;
+        console.log(`Cart was reset.`);
+        console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Reset Cart</button>
+
+    <p class="displayCart"></p>
+
+    <script>
+        let cartQuantity = 0;
+
+        function updatedCartQuality(value) {
+            if (cartQuantity < 10) {
+                cartQuantity = cartQuantity + value;
+                console.log(`Cart Quantity: ${cartQuantity}`);
+                document.querySelector('.displayCart').innerHTML = (`Cart Quantity: ${cartQuantity}`) ;
+            } else {
+                alert('The Cart is Full');
+                cartQuantity = 10;
+                console.log(`Cart Quantity: ${cartQuantity}`);
+                document.querySelector('.displayCart').innerHTML = (`Cart Quantity: ${cartQuantity}`) ;
+            }
+
+        } 
+
+        function updatedCartQualitySub(value) {
+            if (cartQuantity > 0) {
+                cartQuantity = cartQuantity - value;
+                console.log(`Cart Quantity: ${cartQuantity}`);
+                document.querySelector('.displayCart').innerHTML = (`Cart Quantity: ${cartQuantity}`) ;
+            } else {
+                alert('Not enough items in cart');
+                cartQuantity = 0;
+                console.log(`Cart Quantity: ${cartQuantity}`);
+                document.querySelector('.displayCart').innerHTML = (`Cart Quantity: ${cartQuantity}`) ;
+        }
+        }
+    </script>
+</body>
+</html>

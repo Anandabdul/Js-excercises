@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button class="nineAButton">9a</button>
+  <button class="nineBButton">9b</button><br>
+  <br><br>
+
+  <button class="headsbutton" onclick="headsFunction()">Heads</button>
+  <button class="tailsbutton" onclick="tailsFunction()">Tails</button>
+  <p class="displayButtons"></p>
+
+  <br><br><br>
+
+  <input type="text" class="getText" onkeydown="handleSubmitKeydown(event)">
+  <button class="submitButton" onclick="printNameFunction()">Submit</button>
+  <p class="nameDisplay"></p>
+  <br><br><br>
+
+  <input type="text" class="getTextLive" onkeyup="getTextLive()" placeholder="Type Something">
+  <p class="getTextPara"></p>
+  <script>
+    console.log(document.querySelector('button'));
+
+    document.querySelector('.nineBButton').innerHTML = '9b done!';
+    
+    function headsFunction() {
+      document.querySelector('.displayButtons').innerHTML = 'You chose: heads.';
+
+    }
+
+    function tailsFunction() {
+      document.querySelector('.displayButtons').innerHTML = 'You chose: tails.';
+    }
+
+    function printNameFunction() {
+      let name = document.querySelector('.getText').value;
+      document.querySelector('.nameDisplay').innerHTML = `Your name is: ${name}`;
+    }
+
+    function handleSubmitKeydown(event) {
+      if (event.key === 'Enter') {
+        printNameFunction();
+      }
+    }
+
+    function getTextLive() {
+      let content = document.querySelector('.getTextLive');
+      document.querySelector('.getTextPara').innerHTML = content.value;
+    }
+  </script>
+</body>
+</html>
